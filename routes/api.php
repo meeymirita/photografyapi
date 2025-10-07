@@ -1,9 +1,27 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
-
+Route::post('/registration', [UserController::class, 'registration']);
+Route::get('/qwe', function () {
+    return 'qwe';
+});
+/*
+ * register
+ *
+ * name
+ * lastname
+ * login
+ * email
+ * phone
+ * password
+ * city
+ *
+ * auth
+ * login/email/phone
+ * password
+ *
+ *
+ *
+ */
