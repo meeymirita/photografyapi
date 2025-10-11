@@ -7,6 +7,12 @@ class UserRequest extends FormRequest
     {
         return true;
     }
+    protected function failedValidation(\Illuminate\Contracts\Validation\Validator $validator)
+    {
+        throw new \Illuminate\Http\Exceptions\HttpResponseException(
+            response()->json($validator->errors())
+        );
+    }
 
     public function rules(): array
     {
